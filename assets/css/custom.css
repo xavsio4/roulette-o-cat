@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.custom-cursor {
+  cursor: url("~/assets/css/roulette.png"), auto;
+}
+
+/* Add styles for your page content */
+.content {
+  /* Add your styles for the content */
+}
