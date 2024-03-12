@@ -9,8 +9,8 @@
 
     <div class="custom-cursor">
       <div class="grid grid-cols-2">
-        <div>
-          <img @click="playsound" :src="img" />
+        <div @click="playsound">
+          <img :src="img" id="catimg" @mousemove="" />
         </div>
         <div>
           <ul>
@@ -36,7 +36,14 @@ const count = ref(0);
 let idx = ref(0);
 const message = ref("");
 const img = ref("/images/pngwing.com.png");
-const trophiesbox = ["medal3.png", "medal2.png", "medal1.png"];
+const trophiesbox = [
+  "medal1.png",
+  "medal2.png",
+  "medal3.png",
+  "medal4.png",
+  "medal5.png",
+  "medal6.png",
+];
 let trophies = ref([]);
 
 const playsound = () => {
@@ -45,7 +52,7 @@ const playsound = () => {
   audio.loop = false;
   count.value++;
 
-  if (count.value % 10 === 0) {
+  if (count.value % 20 === 0) {
     let audio2 = new Audio(meow);
     audio2.loop = false;
     audio2.play();
@@ -57,9 +64,19 @@ const playsound = () => {
       //do what you need here
       img.value = "/images/pngwing.com.png";
       message.value = "";
-    }, 400);
+    }, 450);
 
     idx.value++;
   }
 };
 </script>
+<style scoped>
+#catimg {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+</style>
