@@ -9,7 +9,7 @@
 
     <div class="custom-cursor">
       <div class="grid grid-cols-2">
-        <div @click="playsound">
+        <div @click="stroke">
           <img :src="img" id="catimg" @mousemove="" />
         </div>
         <div>
@@ -46,7 +46,7 @@ const trophiesbox = [
 ];
 let trophies = ref([]);
 
-const playsound = () => {
+const stroke = () => {
   let audio = new Audio(purr);
   audio.play();
   audio.loop = false;
